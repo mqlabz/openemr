@@ -1,8 +1,8 @@
 services:
   mysql:
     restart: always
-    image: mariadb:11.8
-    command: ['mariadbd','--character-set-server=utf8mb4','--ssl-ca=/etc/ssl/ca.pem','--ssl_cert=/etc/ssl/server-cert.pem','--ssl_key=/etc/ssl/server-key.pem']
+    image: mysql:8.0
+    command: ['mysqld', '--character-set-server=utf8mb4', '--default-authentication-plugin=mysql_native_password']
     ports:
     - 8320:3306
     volumes:
